@@ -17,11 +17,11 @@ const EditEmployee = () => {
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
-    
+
     API.get(`/auth/employee/${id}`)
       .then((res) => {
         if (res.data.Status) {
-        
+
           const emp = res.data.Result;
           emp.category_id = emp.category_id || "";
           setEmployee(emp);
@@ -29,7 +29,7 @@ const EditEmployee = () => {
       })
       .catch((err) => console.log(err));
 
-  
+
     API.get("/auth/category")
       .then((res) => {
         if (res.data.Status) setCategory(res.data.Result);
@@ -107,7 +107,7 @@ const EditEmployee = () => {
             className="form-control mb-2"
           />
 
-         
+
           <select
             className="form-select mb-2"
             value={employee.category_id}

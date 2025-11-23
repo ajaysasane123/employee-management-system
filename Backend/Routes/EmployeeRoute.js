@@ -337,4 +337,4 @@ router.put('/update_profile/:id', upload.single('image'), (req, res) => {
   });
 });
 
-export { router as EmployeeRouter };
+export { router as EmployeeRouter }
